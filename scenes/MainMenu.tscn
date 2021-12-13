@@ -1,0 +1,258 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://assets/menu/background.jpg" type="Texture" id=1]
+[ext_resource path="res://assets/fonts/Oswald-VariableFont_wght.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/fonts/ShadowsIntoLight-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/fonts/Roboto-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://scripts/MainMenu.gd" type="Script" id=5]
+[ext_resource path="res://assets/menu/cross.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 128
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 96
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 64
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 64
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 32
+font_data = ExtResource( 4 )
+
+[sub_resource type="Animation" id=7]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Overlay:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.486275, 0.486275, 0.486275, 0 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "Slide"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 384, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Overlay:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.486275, 0.486275, 0.486275, 0 ), Color( 0.486275, 0.486275, 0.486275, 0.705882 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "Unslide"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 384, 0 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Overlay:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.486275, 0.486275, 0.486275, 0.705882 ), Color( 0.486275, 0.486275, 0.486275, 0 ) ]
+}
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
+
+[node name="GameTitle" type="Label" parent="."]
+anchor_right = 1.0
+margin_bottom = 207.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "BEE-A-HERO"
+align = 1
+
+[node name="Authors" type="Label" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -49.0
+custom_fonts/font = SubResource( 2 )
+text = "2021 - Alexandre, Titouan, Dylan, Romain, Cindy, Mathieu"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayButton" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -117.0
+margin_top = -213.0
+margin_right = 117.0
+margin_bottom = -64.0
+custom_fonts/font = SubResource( 3 )
+text = "JOUER"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionsButton" type="Button" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = -182.0
+margin_right = 235.0
+margin_bottom = -80.0
+custom_fonts/font = SubResource( 4 )
+text = "OPTIONS"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuitButton" type="Button" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -225.0
+margin_top = -182.0
+margin_right = -16.0
+margin_bottom = -80.0
+custom_fonts/font = SubResource( 4 )
+text = "QUITTER"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Overlay" type="ColorRect" parent="."]
+visible = false
+margin_right = 1280.0
+margin_bottom = 720.0
+color = Color( 0.486275, 0.486275, 0.486275, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionsMenu" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="OptionsMenu"]
+margin_left = -384.0
+margin_bottom = 720.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionsLabel" type="Label" parent="OptionsMenu"]
+margin_left = -384.0
+margin_bottom = 64.0
+custom_fonts/font = SubResource( 5 )
+text = "Paramètres"
+align = 1
+valign = 1
+
+[node name="FunnyText" type="Label" parent="OptionsMenu"]
+margin_left = -384.0
+margin_top = 104.0
+margin_bottom = 183.0
+custom_fonts/font = SubResource( 6 )
+text = "Changez la façon dont
+Bee-A-Hero se comporte"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CloseMenuButton" type="TextureButton" parent="OptionsMenu"]
+margin_left = -384.0
+margin_top = 624.0
+margin_right = -284.0
+margin_bottom = 724.0
+texture_normal = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="OptionsMenu"]
+anims/RESET = SubResource( 7 )
+anims/Slide = SubResource( 8 )
+anims/Unslide = SubResource( 9 )
+
+[connection signal="pressed" from="OptionsButton" to="." method="_on_OptionsButton_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="OptionsMenu/CloseMenuButton" to="." method="_on_CloseMenuButton_pressed"]
+[connection signal="animation_finished" from="OptionsMenu/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
