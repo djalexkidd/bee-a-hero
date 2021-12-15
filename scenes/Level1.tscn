@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://scenes/Bee.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tiles/grass/slice07_07.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://assets/tiles/grass/slice06_06.png" type="Texture" id=10]
 [ext_resource path="res://assets/tiles/grass/slice27_27.png" type="Texture" id=11]
 [ext_resource path="res://assets/backgrounds/BK.png" type="Texture" id=12]
+[ext_resource path="res://scenes/PauseScreen.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/props/Rock.tscn" type="PackedScene" id=14]
 [ext_resource path="res://scenes/props/Mushroom_red.tscn" type="PackedScene" id=15]
 [ext_resource path="res://scenes/props/Mushroom_blue.tscn" type="PackedScene" id=16]
@@ -250,17 +251,6 @@ points = PoolVector2Array( 70, 70, 0, 70, 0, 0, 70, 0 )
 
 [node name="Level1" type="Node2D"]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = -1
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-margin_right = 1950.0
-margin_bottom = 1050.0
-texture = ExtResource( 12 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
 cell_size = Vector2( 70, 70 )
@@ -283,3 +273,18 @@ position = Vector2( 640, 20 )
 current = true
 limit_left = -280
 limit_bottom = 350
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+margin_right = 1950.0
+margin_bottom = 1050.0
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pause" type="CanvasLayer" parent="."]
+
+[node name="PauseScreen" parent="Pause" instance=ExtResource( 13 )]
