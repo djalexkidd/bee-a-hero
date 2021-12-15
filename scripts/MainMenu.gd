@@ -27,3 +27,9 @@ func _on_FullScreenButton_pressed():
 		OS.window_fullscreen = false
 	else:
 		OS.window_fullscreen = true
+
+func _on_KitchenGunButton_toggled(button_pressed):
+	if(button_pressed):
+		Global.kitchen_gun = true
+	else:
+		Global.kitchen_gun = false
