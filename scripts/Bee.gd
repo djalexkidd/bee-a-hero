@@ -1,20 +1,28 @@
 extends KinematicBody2D
 
-var movedir = Vector2(0,0)
+var velocity = Vector2(0,0)
 const SPEED = 180 #Vitesse du joueur
+const GRAVITY = 1 # Gravity
 
 func _physics_process(delta):
-	# Déplacement horizontal
-	movedir.x = -Input.get_action_strength("left") + Input.get_action_strength("right")
-	# Déplacement vertical
-	movedir.y = +Input.get_action_strength("down") - Input.get_action_strength("up")
+	if Input.is_action_pressed("right"): #Touche droite
+		velocity.x = SPEED
 	
-	# Pour éviter que la vitesse ne double lorsque deux directions sont pressées
-	movedir = movedir.clamped(1)
+	if Input.is_action_pressed("left"): #Touche gauche
+		velocity.x = -SPEED
 	
-	var velocity = movedir * SPEED
+	if Input.is_action_just_pressed("down"):
+		velocity.y = SPEED
 	
-	velocity = move_and_slide(velocity)
+	if Input.is_action_just_pressed("up"):
+		velocity.y = -SPEED
+	
+	else:
+		velocity.y = velocity.y + GRAVITY
+	
+	velocity = move_and_slide(velocity,Vector2.UP)
+	
+	velocity.x = lerp(velocity.x,0,0.07)
 	
 	# Inverse le sprite si la touche gauche est pressée
 	if Input.is_action_just_pressed("left"):

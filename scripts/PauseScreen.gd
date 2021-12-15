@@ -28,7 +28,7 @@ func _input(event):
 				selected_menu = 2
 				$Pointer.set_valign(selected_menu)
 			$SelectSound.play()
-		elif Input.is_action_just_pressed("start"):
+		elif Input.is_action_just_pressed("fire") or Input.is_action_just_pressed("start"):
 			match selected_menu:
 				0:
 					# Resume game
