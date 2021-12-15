@@ -31,5 +31,7 @@ func _on_FullScreenButton_pressed():
 func _on_KitchenGunButton_toggled(button_pressed):
 	if(button_pressed):
 		Global.kitchen_gun = true
+		$OptionsMenu/HeavyMachinegun.play()
 	else:
 		Global.kitchen_gun = false
+		$OptionsMenu/HeavyMachinegun.stop()

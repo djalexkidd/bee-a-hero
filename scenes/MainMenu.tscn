@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://assets/backgrounds/BK.png" type="Texture" id=1]
 [ext_resource path="res://assets/fonts/Oswald-VariableFont_wght.ttf" type="DynamicFontData" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://scripts/MainMenu.gd" type="Script" id=5]
 [ext_resource path="res://assets/menu/cross.png" type="Texture" id=6]
 [ext_resource path="res://assets/menu/larger.png" type="Texture" id=7]
+[ext_resource path="res://assets/audio/heavy_machinegun.mp3" type="AudioStream" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 128
@@ -277,6 +278,9 @@ __meta__ = {
 anims/RESET = SubResource( 7 )
 anims/Slide = SubResource( 8 )
 anims/Unslide = SubResource( 9 )
+
+[node name="HeavyMachinegun" type="AudioStreamPlayer" parent="OptionsMenu"]
+stream = ExtResource( 8 )
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="OptionsButton" to="." method="_on_OptionsButton_pressed"]
