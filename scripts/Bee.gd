@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 var velocity = Vector2(0,0)
-const SPEED = 180 #Vitesse du joueur
+const SPEED = 100 #Vitesse du joueur
 const GRAVITY = 1 # Gravity
 
 func _ready():
