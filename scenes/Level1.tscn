@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://scenes/Bee.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tiles/grass/slice07_07.png" type="Texture" id=2]
@@ -344,6 +344,51 @@ points = PoolVector2Array( 70, 70, 0, 70, 0, 0, 70, 0 )
 [sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 8.5, 64.5 )
 
+[sub_resource type="Animation" id=17]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Bee/Camera2D:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.25, 0.25 ) ]
+}
+
+[sub_resource type="Animation" id=18]
+resource_name = "dezoom"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Bee/Camera2D:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.5, 0.5 ), Vector2( 0.25, 0.25 ) ]
+}
+
+[sub_resource type="Animation" id=19]
+resource_name = "zoom"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Bee/Camera2D:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.25, 0.25 ), Vector2( 0.5, 0.5 ) ]
+}
+
 [node name="Level1" type="Node2D"]
 script = ExtResource( 17 )
 
@@ -402,5 +447,10 @@ texture = ExtResource( 12 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ChangeCamera"]
 position = Vector2( 1632, 72 )
 shape = SubResource( 14 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 17 )
+anims/dezoom = SubResource( 18 )
+anims/zoom = SubResource( 19 )
 
 [connection signal="body_entered" from="ChangeCamera" to="." method="_on_ChangeCamera_body_entered"]
