@@ -171,7 +171,7 @@ expand = true
 position = Vector2( 613, 211 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 11 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite"]
@@ -205,7 +205,7 @@ margin_top = -166.0
 margin_right = 246.0
 margin_bottom = -64.0
 custom_fonts/font = SubResource( 3 )
-text = "JOUER"
+text = "MENU_PLAY"
 flat = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -219,7 +219,7 @@ margin_top = -134.0
 margin_right = 284.0
 margin_bottom = -96.0
 custom_fonts/font = SubResource( 4 )
-text = "OPTIONS"
+text = "MENU_OPTIONS"
 flat = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -235,7 +235,7 @@ margin_top = -134.0
 margin_right = -53.0
 margin_bottom = -96.0
 custom_fonts/font = SubResource( 4 )
-text = "QUITTER"
+text = "MENU_QUIT"
 flat = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -269,7 +269,7 @@ __meta__ = {
 margin_left = -384.0
 margin_bottom = 64.0
 custom_fonts/font = SubResource( 5 )
-text = "Paramètres"
+text = "MENU_SETTINGS"
 align = 1
 valign = 1
 __meta__ = {
@@ -282,7 +282,7 @@ margin_top = 128.0
 margin_right = -4.0
 margin_bottom = 158.0
 custom_fonts/font = SubResource( 10 )
-text = "Plein écran"
+text = "OPTION_FULL"
 flat = true
 __meta__ = {
 "_edit_use_anchors_": false
