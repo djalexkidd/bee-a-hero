@@ -1,7 +1,9 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://assets/backgrounds/BK.png" type="Texture" id=1]
+[ext_resource path="res://assets/audio/mus_menu.mp3" type="AudioStream" id=2]
 [ext_resource path="res://assets/title_screen/bee_a_hero2.png" type="Texture" id=3]
+[ext_resource path="res://scripts/VolumeSlider.gd" type="Script" id=4]
 [ext_resource path="res://scripts/MainMenu.gd" type="Script" id=5]
 [ext_resource path="res://assets/menu/cross.png" type="Texture" id=6]
 [ext_resource path="res://assets/menu/larger.png" type="Texture" id=7]
@@ -64,6 +66,9 @@ font_data = ExtResource( 11 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 32
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=14]
 font_data = ExtResource( 11 )
 
 [sub_resource type="DynamicFont" id=10]
@@ -171,7 +176,7 @@ expand = true
 position = Vector2( 613, 211 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 11 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite"]
@@ -276,6 +281,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="OptionsLabel2" type="Label" parent="OptionsMenu"]
+margin_left = -240.0
+margin_top = 360.0
+margin_right = -144.0
+margin_bottom = 376.0
+custom_fonts/font = SubResource( 14 )
+text = "VOLUME"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="FullScreenButton" type="Button" parent="OptionsMenu"]
 margin_left = -280.0
 margin_top = 128.0
@@ -312,6 +330,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="VolumeSlider" type="HSlider" parent="OptionsMenu"]
+margin_left = -328.0
+margin_top = 400.0
+margin_right = -51.0
+margin_bottom = 416.0
+max_value = 4.0
+step = 0.01
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="CloseMenuButton" type="TextureButton" parent="OptionsMenu"]
 margin_left = -384.0
 margin_top = 624.0
@@ -330,11 +360,23 @@ anims/Unslide = SubResource( 9 )
 [node name="HeavyMachinegun" type="AudioStreamPlayer" parent="OptionsMenu"]
 stream = ExtResource( 8 )
 
+[node name="Label" type="Label" parent="OptionsMenu"]
+margin_right = 40.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuTheme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+autoplay = true
+
 [connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="OptionsButton" to="." method="_on_OptionsButton_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_QuitButton_pressed"]
 [connection signal="pressed" from="OptionsMenu/FullScreenButton" to="." method="_on_FullScreenButton_pressed"]
 [connection signal="pressed" from="OptionsMenu/FullScreenIcon" to="." method="_on_FullScreenButton_pressed"]
 [connection signal="toggled" from="OptionsMenu/KitchenGunButton" to="." method="_on_KitchenGunButton_toggled"]
+[connection signal="value_changed" from="OptionsMenu/VolumeSlider" to="OptionsMenu/VolumeSlider" method="_on_VolumeSlider_value_changed"]
 [connection signal="pressed" from="OptionsMenu/CloseMenuButton" to="." method="_on_CloseMenuButton_pressed"]
 [connection signal="animation_finished" from="OptionsMenu/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
