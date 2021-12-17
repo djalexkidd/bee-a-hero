@@ -32,4 +32,4 @@ func _physics_process(delta):
 		$AnimatedSprite.flip_h = false
 
 func ouch():
-	$Death.play()
+	get_tree().change_scene("res://scenes/GameOver.tscn")
