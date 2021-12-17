@@ -31,4 +31,4 @@ func _on_sides_checker_body_entered(body): # Touche le bas
 	_on_top_checker_body_entered(body)
 
 func _on_oof_body_entered(body):
-	body.ouch()
+	body.ouch(body)

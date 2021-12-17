@@ -31,5 +31,5 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("right"):
 		$AnimatedSprite.flip_h = false
 
-func ouch():
+func ouch(body):
 	get_tree().change_scene("res://scenes/GameOver.tscn")

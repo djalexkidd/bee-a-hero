@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://scenes/Bee.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/backgrounds/Level design - level 1.png" type="Texture" id=2]
@@ -20,6 +20,33 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 919, 110 )
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 92.0869
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 81.0
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 96.1301
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 62.0
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 37.0
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 77.0584
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 596.5, 19.25 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 320.125, 19.25 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 54.75, 576 )
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 17 )
@@ -102,6 +129,114 @@ polygon = PoolVector2Array( -13, 16, -77, 100, -87, 112, -89, 102, -38, -10, 14,
 position = Vector2( 900, 400 )
 polygon = PoolVector2Array( -12, -15, -104, -44, -48, -46, -19, -30, 20, -31, 47, -42, 86, -29, 251, -30, 340, 36, 422, 54, 480, 49, 517, 58, 538, 37, 567, 34, 610, 0, 622, -9, 638, 0, 513, 79, 271, 40 )
 
+[node name="CollisionNuage" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionNuage"]
+position = Vector2( 2650, 38 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CollisionNuage"]
+position = Vector2( 2307, 198 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="CollisionNuage"]
+position = Vector2( 2922, -46 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="CollisionNuage"]
+position = Vector2( 3545, 244 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="CollisionNuage"]
+position = Vector2( 3267, -207 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="CollisionNuage"]
+position = Vector2( 2460, -367 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="CollisionNuage"]
+position = Vector2( 2118, -206 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="CollisionNuage"]
+position = Vector2( 2752, -427 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="CollisionNuage"]
+position = Vector2( 2984, -303 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="CollisionNuage"]
+position = Vector2( 2175, -460 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="CollisionNuage"]
+position = Vector2( 1971, -571 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="CollisionNuage"]
+position = Vector2( 3265, 150 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="CollisionNuage"]
+position = Vector2( 3761, 376 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="CollisionNuage"]
+position = Vector2( 3473, -80 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="CollisionNuage"]
+position = Vector2( 3305, -458 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="CollisionNuage"]
+position = Vector2( 2370, -63 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="CollisionNuage"]
+position = Vector2( 2855, 168 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="CollisionNuage"]
+position = Vector2( 2578, 373 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="CollisionNuage"]
+position = Vector2( 2671, -235 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D21" type="CollisionShape2D" parent="CollisionNuage"]
+position = Vector2( 3210, 358 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D22" type="CollisionShape2D" parent="CollisionNuage"]
+position = Vector2( 2919, 386 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="CollisionNuage"]
+position = Vector2( 3101, -553 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D23" type="CollisionShape2D" parent="CollisionNuage"]
+position = Vector2( 3056, 484 )
+shape = SubResource( 8 )
+
+[node name="CollisionShape2D24" type="CollisionShape2D" parent="CollisionNuage"]
+position = Vector2( 3019, 444 )
+shape = SubResource( 9 )
+
+[node name="FinishLevel" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FinishLevel"]
+position = Vector2( 3880.75, -58 )
+shape = SubResource( 10 )
+
 [node name="spiders" type="Node2D" parent="."]
 
 [node name="Spider1" parent="spiders" instance=ExtResource( 4 )]
@@ -128,7 +263,7 @@ direction_x = 1
 direction_y = 0
 
 [node name="Spider8" parent="spiders" instance=ExtResource( 4 )]
-position = Vector2( 1215, 307 )
+position = Vector2( 1244, 326 )
 
 [node name="Spider9" parent="spiders" instance=ExtResource( 4 )]
 position = Vector2( 1481, 183 )
@@ -164,33 +299,18 @@ position = Vector2( 1372, -294 )
 position = Vector2( 1709, -260 )
 
 [node name="Spider18" parent="spiders" instance=ExtResource( 4 )]
-position = Vector2( 1838, 55 )
-direction_x = 1
-direction_y = 0
-
-[node name="Spider19" parent="spiders" instance=ExtResource( 4 )]
-position = Vector2( 1751, 14 )
+position = Vector2( 1860, -26 )
 direction_x = 1
 direction_y = 0
 
 [node name="Spider20" parent="spiders" instance=ExtResource( 4 )]
-position = Vector2( 1742, 112 )
-direction_x = 1
-direction_y = 0
-
-[node name="Spider21" parent="spiders" instance=ExtResource( 4 )]
-position = Vector2( 1866, 204 )
-direction_x = 1
-direction_y = 0
-
-[node name="Spider22" parent="spiders" instance=ExtResource( 4 )]
-position = Vector2( 1737, 264 )
-direction_x = 1
+position = Vector2( 1747, 22 )
+direction_x = -1
 direction_y = 0
 
 [node name="Spider23" parent="spiders" instance=ExtResource( 4 )]
-position = Vector2( 1795, 158 )
-direction_x = 1
+position = Vector2( 1830, 77 )
+direction_x = -1
 direction_y = 0
 
 [node name="Bee" parent="." instance=ExtResource( 1 )]
@@ -258,3 +378,6 @@ position = Vector2( 641, 477 )
 
 [node name="herbeDroite" parent="." instance=ExtResource( 11 )]
 position = Vector2( 411, 414 )
+
+[connection signal="body_entered" from="CollisionNuage" to="Bee" method="ouch"]
+[connection signal="body_entered" from="FinishLevel" to="." method="_on_FinishLevel_body_entered"]
