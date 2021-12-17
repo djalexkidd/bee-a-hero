@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://assets/backgrounds/BK.png" type="Texture" id=1]
 [ext_resource path="res://assets/audio/mus_menu.mp3" type="AudioStream" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://scripts/MainMenu.gd" type="Script" id=5]
 [ext_resource path="res://assets/menu/cross.png" type="Texture" id=6]
 [ext_resource path="res://assets/menu/larger.png" type="Texture" id=7]
-[ext_resource path="res://assets/audio/heavy_machinegun.mp3" type="AudioStream" id=8]
 [ext_resource path="res://assets/title_screen/bee_a_hero1.png" type="Texture" id=9]
 [ext_resource path="res://assets/title_screen/bee_a_hero3.png" type="Texture" id=10]
 [ext_resource path="res://assets/fonts/PressStart.ttf" type="DynamicFontData" id=11]
@@ -341,16 +340,6 @@ __meta__ = {
 anims/RESET = SubResource( 7 )
 anims/Slide = SubResource( 8 )
 anims/Unslide = SubResource( 9 )
-
-[node name="HeavyMachinegun" type="AudioStreamPlayer" parent="OptionsMenu"]
-stream = ExtResource( 8 )
-
-[node name="Label" type="Label" parent="OptionsMenu"]
-margin_right = 40.0
-margin_bottom = 14.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="MenuTheme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
