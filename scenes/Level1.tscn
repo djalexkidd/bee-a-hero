@@ -299,21 +299,6 @@ position = Vector2( 1372, -294 )
 [node name="Spider17" parent="spiders" instance=ExtResource( 4 )]
 position = Vector2( 1709, -260 )
 
-[node name="Spider18" parent="spiders" instance=ExtResource( 4 )]
-position = Vector2( 1860, -26 )
-direction_x = 1
-direction_y = 0
-
-[node name="Spider20" parent="spiders" instance=ExtResource( 4 )]
-position = Vector2( 1747, 22 )
-direction_x = -1
-direction_y = 0
-
-[node name="Spider23" parent="spiders" instance=ExtResource( 4 )]
-position = Vector2( 1830, 77 )
-direction_x = -1
-direction_y = 0
-
 [node name="Bee" parent="." instance=ExtResource( 1 )]
 position = Vector2( 100, -47 )
 
@@ -382,6 +367,7 @@ position = Vector2( 411, 414 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 18 )
+volume_db = -4.0
 autoplay = true
 
 [connection signal="body_entered" from="CollisionNuage" to="Bee" method="ouch"]
