@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://scenes/Bee.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/backgrounds/Level design - level 1.png" type="Texture" id=2]
@@ -18,6 +18,10 @@
 [ext_resource path="res://scenes/props/Mushroom_blue.tscn" type="PackedScene" id=16]
 [ext_resource path="res://scripts/Level1.gd" type="Script" id=17]
 [ext_resource path="res://assets/audio/mus_level1.mp3" type="AudioStream" id=18]
+[ext_resource path="res://assets/touch_controls/arrowUp.png" type="Texture" id=19]
+[ext_resource path="res://assets/touch_controls/arrowLeft.png" type="Texture" id=20]
+[ext_resource path="res://assets/touch_controls/arrowDown.png" type="Texture" id=21]
+[ext_resource path="res://assets/touch_controls/arrowRight.png" type="Texture" id=22]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 919, 110 )
@@ -316,6 +320,38 @@ drag_margin_bottom = 0.0
 [node name="Pause" type="CanvasLayer" parent="."]
 
 [node name="PauseScreen" parent="Pause" instance=ExtResource( 13 )]
+
+[node name="TouchScreenButtonUp" type="TouchScreenButton" parent="Pause"]
+position = Vector2( 120, 384 )
+scale = Vector2( 2, 2 )
+normal = ExtResource( 19 )
+passby_press = true
+action = "up"
+visibility_mode = 1
+
+[node name="TouchScreenButtonLeft" type="TouchScreenButton" parent="Pause"]
+position = Vector2( 24, 480 )
+scale = Vector2( 2, 2 )
+normal = ExtResource( 20 )
+passby_press = true
+action = "up"
+visibility_mode = 1
+
+[node name="TouchScreenButtonDown" type="TouchScreenButton" parent="Pause"]
+position = Vector2( 120, 544 )
+scale = Vector2( 2, 2 )
+normal = ExtResource( 21 )
+passby_press = true
+action = "up"
+visibility_mode = 1
+
+[node name="TouchScreenButtonRight" type="TouchScreenButton" parent="Pause"]
+position = Vector2( 184, 480 )
+scale = Vector2( 2, 2 )
+normal = ExtResource( 22 )
+passby_press = true
+action = "up"
+visibility_mode = 1
 
 [node name="brinDroitIndividuel5" parent="." instance=ExtResource( 5 )]
 position = Vector2( 115, 474 )
