@@ -1,0 +1,83 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scripts/Spider.gd" type="Script" id=1]
+[ext_resource path="res://assets/enemy/spider/Araignée.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 9, 4.38574 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 9.5, 9 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 9, 7.5 )
+
+[sub_resource type="Animation" id=6]
+resource_name = "Nouvelle animation"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[node name="Spider" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="top_checker" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 33
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="top_checker"]
+position = Vector2( -1, -8 )
+shape = SubResource( 3 )
+
+[node name="sides_checker" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 33
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sides_checker"]
+position = Vector2( -1.5, 6 )
+shape = SubResource( 4 )
+
+[node name="oof" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oof"]
+position = Vector2( -1, 0.5 )
+shape = SubResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Nouvelle animation"
+"anims/Nouvelle animation" = SubResource( 6 )
+anims/RESET = SubResource( 7 )
+
+[connection signal="body_entered" from="top_checker" to="." method="_on_top_checker_body_entered"]
+[connection signal="body_entered" from="sides_checker" to="." method="_on_sides_checker_body_entered"]
+[connection signal="body_entered" from="oof" to="." method="_on_oof_body_entered"]

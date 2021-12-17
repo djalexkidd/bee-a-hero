@@ -1,15 +1,27 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/Bee.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/backgrounds/Level design - level 1.png" type="Texture" id=2]
 [ext_resource path="res://tilesets/Level1.tres" type="TileSet" id=3]
+[ext_resource path="res://scenes/Spider.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/backgrounds/BK.png" type="Texture" id=12]
 [ext_resource path="res://scenes/PauseScreen.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scripts/Level1.gd" type="Script" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 919, 110 )
 
-[node name="Node2D" type="Node2D"]
+[node name="Level1" type="Node2D"]
+script = ExtResource( 17 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 1772, 144 )
+scale = Vector2( 2.17385, 2.16476 )
+texture = ExtResource( 12 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_top = -1376.0
@@ -25,29 +37,6 @@ __meta__ = {
 tile_set = ExtResource( 3 )
 format = 1
 tile_data = PoolIntArray( -720868, 9, 0, -720867, 9, 0, -720866, 9, 0, -720865, 9, 0, -720864, 9, 0, -720863, 9, 0, -720862, 9, 0, -720861, 9, 0, -720860, 9, 0, -720859, 9, 0, -720858, 9, 0, -720857, 9, 0, -720856, 9, 0, -720855, 9, 0, -720854, 9, 0, -720853, 9, 0, -720852, 9, 0, -720851, 9, 0, -720850, 9, 0, -720849, 9, 0, -720848, 9, 0, -720847, 9, 0, -720846, 9, 0, -720845, 9, 0, -720844, 9, 0, -720843, 9, 0, -720842, 9, 0, -720841, 9, 0, -720840, 9, 0, -720839, 9, 0, -720838, 9, 0, -720837, 9, 0, -720836, 9, 0, -655332, 9, 0, -655300, 9, 0, -589764, 9, 0, -458753, 9, 0, -524288, 9, 0, -524287, 9, 0, -524286, 9, 0, -524285, 9, 0, -524284, 9, 0, -524283, 9, 0, -524282, 9, 0, -524281, 9, 0, -524280, 9, 0, -524279, 9, 0, -524278, 9, 0, -524277, 9, 0, -524276, 9, 0, -524275, 9, 0, -524274, 9, 0, -524273, 9, 0, -524228, 9, 0, -393217, 9, 0, -458692, 9, 0, -327681, 9, 0, -393156, 9, 0, -262145, 9, 0, -327620, 9, 0, -196609, 9, 0, -262084, 9, 0, -131073, 9, 0, -196548, 9, 0, -65537, 9, 0, -131012, 9, 0, -1, 9, 0, -65476, 9, 0, 65535, 9, 0, 60, 9, 0, 131071, 9, 0, 65596, 9, 0, 196607, 9, 0, 131132, 9, 0, 262143, 9, 0, 196668, 9, 0, 327679, 9, 0, 262204, 9, 0, 393215, 9, 0, 327740, 9, 0, 458751, 9, 0, 393276, 9, 0, 524287, 9, 0, 458812, 9, 0, 589823, 9, 0, 655359, 9, 0, 720895, 9, 0 )
-
-[node name="Bee" parent="." instance=ExtResource( 1 )]
-position = Vector2( 100, -47 )
-
-[node name="Camera2D" type="Camera2D" parent="Bee"]
-current = true
-zoom = Vector2( 0.25, 0.25 )
-limit_left = 6
-limit_top = -440
-limit_right = 3840
-drag_margin_left = 0.0
-drag_margin_top = 0.0
-drag_margin_right = 0.0
-drag_margin_bottom = 0.0
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 1772, 144 )
-scale = Vector2( 2.17385, 2.16476 )
-texture = ExtResource( 12 )
 
 [node name="Collision" type="StaticBody2D" parent="."]
 
@@ -78,6 +67,111 @@ polygon = PoolVector2Array( -13, 16, -77, 100, -87, 112, -89, 102, -38, -10, 14,
 [node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Collision"]
 position = Vector2( 900, 400 )
 polygon = PoolVector2Array( -12, -15, -104, -44, -48, -46, -19, -30, 20, -31, 47, -42, 86, -29, 251, -30, 340, 36, 422, 54, 480, 49, 517, 58, 538, 37, 567, 34, 610, 0, 622, -9, 638, 0, 513, 79, 271, 40 )
+
+[node name="spiders" type="Node2D" parent="."]
+
+[node name="Spider1" parent="spiders" instance=ExtResource( 4 )]
+position = Vector2( 1177, 287 )
+
+[node name="Spider2" parent="spiders" instance=ExtResource( 4 )]
+position = Vector2( 1434, 361 )
+
+[node name="Spider3" parent="spiders" instance=ExtResource( 4 )]
+position = Vector2( 1312, 112 )
+
+[node name="Spider4" parent="spiders" instance=ExtResource( 4 )]
+position = Vector2( 1157, 111 )
+
+[node name="Spider5" parent="spiders" instance=ExtResource( 4 )]
+position = Vector2( 1225, -196 )
+
+[node name="Spider6" parent="spiders" instance=ExtResource( 4 )]
+position = Vector2( 1626, -179 )
+
+[node name="Spider7" parent="spiders" instance=ExtResource( 4 )]
+position = Vector2( 1483, 224 )
+direction_x = 1
+direction_y = 0
+
+[node name="Spider8" parent="spiders" instance=ExtResource( 4 )]
+position = Vector2( 1215, 307 )
+
+[node name="Spider9" parent="spiders" instance=ExtResource( 4 )]
+position = Vector2( 1481, 183 )
+direction_x = 1
+direction_y = 0
+
+[node name="Spider10" parent="spiders" instance=ExtResource( 4 )]
+position = Vector2( 1376, 41 )
+
+[node name="Spider11" parent="spiders" instance=ExtResource( 4 )]
+position = Vector2( 979, -113 )
+direction_x = 1
+direction_y = 0
+
+[node name="Spider12" parent="spiders" instance=ExtResource( 4 )]
+position = Vector2( 1077, -137 )
+direction_x = 1
+direction_y = 0
+
+[node name="Spider13" parent="spiders" instance=ExtResource( 4 )]
+position = Vector2( 1383, 426 )
+
+[node name="Spider14" parent="spiders" instance=ExtResource( 4 )]
+position = Vector2( 1266, -306 )
+
+[node name="Spider15" parent="spiders" instance=ExtResource( 4 )]
+position = Vector2( 1319, -256 )
+
+[node name="Spider16" parent="spiders" instance=ExtResource( 4 )]
+position = Vector2( 1372, -294 )
+
+[node name="Spider17" parent="spiders" instance=ExtResource( 4 )]
+position = Vector2( 1709, -260 )
+
+[node name="Spider18" parent="spiders" instance=ExtResource( 4 )]
+position = Vector2( 1838, 55 )
+direction_x = 1
+direction_y = 0
+
+[node name="Spider19" parent="spiders" instance=ExtResource( 4 )]
+position = Vector2( 1751, 14 )
+direction_x = 1
+direction_y = 0
+
+[node name="Spider20" parent="spiders" instance=ExtResource( 4 )]
+position = Vector2( 1742, 112 )
+direction_x = 1
+direction_y = 0
+
+[node name="Spider21" parent="spiders" instance=ExtResource( 4 )]
+position = Vector2( 1866, 204 )
+direction_x = 1
+direction_y = 0
+
+[node name="Spider22" parent="spiders" instance=ExtResource( 4 )]
+position = Vector2( 1737, 264 )
+direction_x = 1
+direction_y = 0
+
+[node name="Spider23" parent="spiders" instance=ExtResource( 4 )]
+position = Vector2( 1795, 158 )
+direction_x = 1
+direction_y = 0
+
+[node name="Bee" parent="." instance=ExtResource( 1 )]
+position = Vector2( 100, -47 )
+
+[node name="Camera2D" type="Camera2D" parent="Bee"]
+current = true
+zoom = Vector2( 0.25, 0.25 )
+limit_left = 6
+limit_top = -440
+limit_right = 3840
+drag_margin_left = 0.0
+drag_margin_top = 0.0
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
 
 [node name="Pause" type="CanvasLayer" parent="."]
 

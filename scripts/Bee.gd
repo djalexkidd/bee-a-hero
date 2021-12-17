@@ -38,3 +38,6 @@ func _physics_process(delta):
 		$AnimatedSprite.flip_h = false
 		$Gun.flip_h = false
 		$Gun.position.x = 25
+
+func ouch():
+	$Death.play()
