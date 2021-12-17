@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://scenes/Bee.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/backgrounds/Level design - level 1.png" type="Texture" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://scenes/props/Mushroom_red.tscn" type="PackedScene" id=15]
 [ext_resource path="res://scenes/props/Mushroom_blue.tscn" type="PackedScene" id=16]
 [ext_resource path="res://scripts/Level1.gd" type="Script" id=17]
+[ext_resource path="res://assets/audio/mus_level1.mp3" type="AudioStream" id=18]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 919, 110 )
@@ -378,6 +379,10 @@ position = Vector2( 641, 477 )
 
 [node name="herbeDroite" parent="." instance=ExtResource( 11 )]
 position = Vector2( 411, 414 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 18 )
+autoplay = true
 
 [connection signal="body_entered" from="CollisionNuage" to="Bee" method="ouch"]
 [connection signal="body_entered" from="FinishLevel" to="." method="_on_FinishLevel_body_entered"]
