@@ -1,11 +1,19 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://scenes/Bee.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/backgrounds/Level design - level 1.png" type="Texture" id=2]
 [ext_resource path="res://tilesets/Level1.tres" type="TileSet" id=3]
 [ext_resource path="res://scenes/Spider.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/props/brinDroitIndividuel.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/props/brinHerbeCourte.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/props/HerbeCourte.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/props/brinHerbe.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/props/brinHerbesDroits.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/props/brinHerbeDroit.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/props/herbeDroite.tscn" type="PackedScene" id=11]
 [ext_resource path="res://assets/backgrounds/BK.png" type="Texture" id=12]
 [ext_resource path="res://scenes/PauseScreen.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/props/Herbe.tscn" type="PackedScene" id=14]
 [ext_resource path="res://scenes/props/Mushroom_red.tscn" type="PackedScene" id=15]
 [ext_resource path="res://scenes/props/Mushroom_blue.tscn" type="PackedScene" id=16]
 [ext_resource path="res://scripts/Level1.gd" type="Script" id=17]
@@ -24,6 +32,24 @@ script = ExtResource( 17 )
 position = Vector2( 1772, 144 )
 scale = Vector2( 2.17385, 2.16476 )
 texture = ExtResource( 12 )
+
+[node name="Herbe" parent="." instance=ExtResource( 14 )]
+position = Vector2( 747, 425 )
+
+[node name="Herbe2" parent="." instance=ExtResource( 14 )]
+position = Vector2( 396, 425 )
+
+[node name="Herbe3" parent="." instance=ExtResource( 14 )]
+position = Vector2( 290, 425 )
+
+[node name="Herbe4" parent="." instance=ExtResource( 14 )]
+position = Vector2( 180, 425 )
+
+[node name="Herbe5" parent="." instance=ExtResource( 14 )]
+position = Vector2( 494, 425 )
+
+[node name="Herbe6" parent="." instance=ExtResource( 14 )]
+position = Vector2( 642, 425 )
 
 [node name="Mushroom_blue" parent="." instance=ExtResource( 16 )]
 position = Vector2( 234, 482 )
@@ -184,3 +210,51 @@ drag_margin_bottom = 0.0
 [node name="Pause" type="CanvasLayer" parent="."]
 
 [node name="PauseScreen" parent="Pause" instance=ExtResource( 13 )]
+
+[node name="brinDroitIndividuel5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 115, 474 )
+
+[node name="brinDroitIndividuel" parent="." instance=ExtResource( 5 )]
+position = Vector2( 453, 424 )
+
+[node name="brinDroitIndividuel2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 485, 446 )
+
+[node name="brinDroitIndividuel3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 469, 436 )
+
+[node name="brinHerbeCourte" parent="." instance=ExtResource( 6 )]
+position = Vector2( 293, 476 )
+
+[node name="brinHerbeCourte2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 195, 476 )
+
+[node name="HerbeCourte" parent="." instance=ExtResource( 7 )]
+position = Vector2( 551, 475 )
+
+[node name="brinHerbe" parent="." instance=ExtResource( 8 )]
+position = Vector2( 322, 436 )
+
+[node name="brinHerbe2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 77, 458 )
+
+[node name="brinHerbeDroit" parent="." instance=ExtResource( 10 )]
+position = Vector2( 27, 472 )
+
+[node name="brinHerbeDroit2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 513, 476 )
+
+[node name="brinHerbeDroit3" parent="." instance=ExtResource( 10 )]
+position = Vector2( 600, 476 )
+
+[node name="brinHerbeDroit4" parent="." instance=ExtResource( 10 )]
+position = Vector2( 578, 470 )
+
+[node name="brinHerbesDroits" parent="." instance=ExtResource( 9 )]
+position = Vector2( 43, 474 )
+
+[node name="brinHerbesDroits2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 641, 477 )
+
+[node name="herbeDroite" parent="." instance=ExtResource( 11 )]
+position = Vector2( 411, 414 )
