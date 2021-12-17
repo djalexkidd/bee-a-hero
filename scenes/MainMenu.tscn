@@ -176,7 +176,6 @@ expand = true
 position = Vector2( 613, 211 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 11 )
-frame = 1
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite"]
@@ -316,20 +315,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="KitchenGunButton" type="Button" parent="OptionsMenu"]
-margin_left = -328.0
-margin_top = 224.0
-margin_right = -52.0
-margin_bottom = 268.0
-custom_colors/font_color_pressed = Color( 0.431373, 1, 0, 1 )
-custom_fonts/font = SubResource( 10 )
-toggle_mode = true
-text = "KITCHEN GUN"
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="VolumeSlider" type="HSlider" parent="OptionsMenu"]
 margin_left = -328.0
 margin_top = 400.0
@@ -376,7 +361,6 @@ autoplay = true
 [connection signal="pressed" from="QuitButton" to="." method="_on_QuitButton_pressed"]
 [connection signal="pressed" from="OptionsMenu/FullScreenButton" to="." method="_on_FullScreenButton_pressed"]
 [connection signal="pressed" from="OptionsMenu/FullScreenIcon" to="." method="_on_FullScreenButton_pressed"]
-[connection signal="toggled" from="OptionsMenu/KitchenGunButton" to="." method="_on_KitchenGunButton_toggled"]
 [connection signal="value_changed" from="OptionsMenu/VolumeSlider" to="OptionsMenu/VolumeSlider" method="_on_VolumeSlider_value_changed"]
 [connection signal="pressed" from="OptionsMenu/CloseMenuButton" to="." method="_on_CloseMenuButton_pressed"]
 [connection signal="animation_finished" from="OptionsMenu/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
