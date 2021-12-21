@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Bee Final éffrayé wings up.png-0b4397f6274737d200281bc75a097759.stex"
+path="res://.import/bee_up.png-39f79a5f7b9f9634a6fd2ae9f42b3312.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player/Bee Final éffrayé wings up.png"
-dest_files=[ "res://.import/Bee Final éffrayé wings up.png-0b4397f6274737d200281bc75a097759.stex" ]
+source_file="res://assets/player/bee_up.png"
+dest_files=[ "res://.import/bee_up.png-39f79a5f7b9f9634a6fd2ae9f42b3312.stex" ]
 
 [params]
 

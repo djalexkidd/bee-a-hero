@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Level design - level 1.png-4db268b1c1c1db666688a4cd1b0eb9dd.stex"
+path="res://.import/bee_mid_alt.png-bf0dcff5e7cd13f7c6abe7cc54b3caf1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/backgrounds/Level design - level 1.png"
-dest_files=[ "res://.import/Level design - level 1.png-4db268b1c1c1db666688a4cd1b0eb9dd.stex" ]
+source_file="res://assets/player/bee_mid_alt.png"
+dest_files=[ "res://.import/bee_mid_alt.png-bf0dcff5e7cd13f7c6abe7cc54b3caf1.stex" ]
 
 [params]
 

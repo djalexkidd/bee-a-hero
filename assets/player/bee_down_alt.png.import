@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Araignée.png-e8cb6df164fb907c6da15ca36040c89c.stex"
+path="res://.import/bee_down_alt.png-46bb17fcec9bd1565795ae9a07b91aa4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/enemy/spider/Araignée.png"
-dest_files=[ "res://.import/Araignée.png-e8cb6df164fb907c6da15ca36040c89c.stex" ]
+source_file="res://assets/player/bee_down_alt.png"
+dest_files=[ "res://.import/bee_down_alt.png-46bb17fcec9bd1565795ae9a07b91aa4.stex" ]
 
 [params]
 

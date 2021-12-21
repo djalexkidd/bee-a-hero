@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Bee Final éffrayé wings down bop png1.png-08c841640bf7cd3b9ef9144392cf51c8.stex"
+path="res://.import/bee_up_alt.png-3d687143474d67dbeaa18a6b65de1cec.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player/Bee Final éffrayé wings down bop png1.png"
-dest_files=[ "res://.import/Bee Final éffrayé wings down bop png1.png-08c841640bf7cd3b9ef9144392cf51c8.stex" ]
+source_file="res://assets/player/bee_up_alt.png"
+dest_files=[ "res://.import/bee_up_alt.png-3d687143474d67dbeaa18a6b65de1cec.stex" ]
 
 [params]
 
